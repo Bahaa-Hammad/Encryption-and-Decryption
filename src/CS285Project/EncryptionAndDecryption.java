@@ -77,14 +77,12 @@ public class EncryptionAndDecryption {
 
 
     public static int getAsciiIndex(char c){
-        int a = c;
-        return a;
+        return c;
     }
 
 
     public static char getAscii(int index){
-        char x = (char) index;
-        return x;
+        return (char) index;
     }
 
 
