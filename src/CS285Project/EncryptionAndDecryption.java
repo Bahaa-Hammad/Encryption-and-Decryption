@@ -10,15 +10,14 @@ public class EncryptionAndDecryption {
         File file = new File("input.txt");
         Scanner scan = new Scanner(file);
         String line = "";
-        String encryptLine;
+        String encryptedLine;
 
-        //Encrypting then decrypting
+        // The Encrypted File:
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
-
-            while (scan.hasNextLine()) {
-                encryptLine = encrypt(line.concat(""+ scan.nextLine())); // Encrypted
-                writer.write(decrypt(encryptLine));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("encrypted.txt"));
+            while (scan.hasNextLine()) { // Take one line at a time.
+                encryptedLine = encrypt(line.concat(""+ scan.nextLine()));
+                writer.write(encryptedLine);
                 writer.newLine();
             }
             writer.close();
@@ -26,13 +25,16 @@ public class EncryptionAndDecryption {
             e.printStackTrace();
         }
 
-        // The Encrypted File:
+        //Encrypting then decrypting
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("encrypted.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+
+            file = new File("encrypted.txt");
             scan = new Scanner(file);
-            while (scan.hasNextLine()) {
-                encryptLine = encrypt(line.concat(""+ scan.nextLine()));
-                writer.write(encryptLine);
+
+            while (scan.hasNextLine()) { // Take one line at a time.
+                encryptedLine = line.concat(""+ scan.nextLine()); // Encrypted
+                writer.write(decrypt(encryptedLine));
                 writer.newLine();
             }
             writer.close();
