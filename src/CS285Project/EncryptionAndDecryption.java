@@ -11,11 +11,13 @@ public class EncryptionAndDecryption {
         Scanner scan = new Scanner(file);
         String line = "";
         String encryptLine;
+
+        //Encrypting then decrypting
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
 
             while (scan.hasNextLine()) {
-                encryptLine = encrypt(line.concat(""+ scan.nextLine()));
+                encryptLine = encrypt(line.concat(""+ scan.nextLine())); // Encrypted
                 writer.write(decrypt(encryptLine));
                 writer.newLine();
             }
@@ -24,6 +26,7 @@ public class EncryptionAndDecryption {
             e.printStackTrace();
         }
 
+        // The Encrypted File:
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("encrypted.txt"));
             scan = new Scanner(file);
