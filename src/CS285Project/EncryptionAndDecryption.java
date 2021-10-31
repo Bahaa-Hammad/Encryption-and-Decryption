@@ -7,19 +7,31 @@ import java.util.Scanner;
 public class EncryptionAndDecryption {
 
     public static void main(String[] args) throws FileNotFoundException {
-        String x = encrypt("Bahaa");
+
+        //User Prime Number input:
+        Scanner pInput = new Scanner(System.in);
+        System.out.println("Enter The First Prime Number: ");
+        int p1 = pInput.nextInt();
+
+        System.out.println("Enter The Second Prime Number: ");
+        int p2 = pInput.nextInt();
+
+
+        String x = encrypt("'",p1, p2);
+        System.out.println((int) '\'');
         System.out.println(x);
-        System.out.println(decrypt(x));
+        System.out.println(decrypt(x,p1,p2));
+
+
         File file = new File("input.txt");
         Scanner scan = new Scanner(file);
         String line = "";
         String encryptedLine;
-
         // The Encrypted File:
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("encrypted.txt"));
             while (scan.hasNextLine()) { // Take one line at a time.
-                encryptedLine = encrypt(line.concat(""+ scan.nextLine()));
+                encryptedLine = encrypt(line.concat(""+ scan.nextLine()),p1,p2);
                 writer.write(encryptedLine);
                 writer.newLine();
             }
@@ -28,7 +40,7 @@ public class EncryptionAndDecryption {
             e.printStackTrace();
         }
 
-        //Encrypting then decrypting
+        // Decrypting The Encrypted file
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
 
@@ -37,7 +49,7 @@ public class EncryptionAndDecryption {
 
             while (scan.hasNextLine()) { // Take one line at a time.
                 encryptedLine = line.concat(""+ scan.nextLine()); // Encrypted
-                writer.write(decrypt(encryptedLine));
+                writer.write(decrypt(encryptedLine, p1, p2));
                 writer.newLine();
             }
             writer.close();
@@ -47,9 +59,7 @@ public class EncryptionAndDecryption {
 
     }
 
-    public static String encrypt(String line){
-        int p1 = 7;
-        int p2 = 3;
+    public static String encrypt(String line, int p1, int p2){
         char[] arr = line.toCharArray();
         char[] encryptedLine = new char[line.length()];
         for(int i = 0; i < arr.length; i++){
@@ -61,11 +71,10 @@ public class EncryptionAndDecryption {
     }
 
 
-    public static String decrypt(String line){
+    public static String decrypt(String line, int p1, int p2){
         char[] arr = line.toCharArray();
         char[] decryptionLine = new char[line.length()];
         int alpha;
-        int p1 = 7, p2 = 3;
         int result;
 
 
