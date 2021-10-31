@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class EncryptionAndDecryption {
 
     public static void main(String[] args) throws FileNotFoundException {
+        String x = encrypt("Bahaa");
+        System.out.println(x);
+        System.out.println(decrypt(x));
         File file = new File("input.txt");
         Scanner scan = new Scanner(file);
         String line = "";
@@ -51,7 +54,7 @@ public class EncryptionAndDecryption {
         char[] encryptedLine = new char[line.length()];
         for(int i = 0; i < arr.length; i++){
             int index = getAsciiIndex(arr[i]);
-            int encryptionIndex = ((p1) * (index) + (p2)) % 256;
+            int encryptionIndex = ((p1) * (index) + (p2)) % 128;
             encryptedLine[i] = getAscii(encryptionIndex);
         }
         return concat(encryptedLine);
@@ -72,7 +75,7 @@ public class EncryptionAndDecryption {
             alpha = -1;
             while (result != 0){
                 alpha++;
-                result = (k - (p1 * alpha + p2)) % 256;
+                result = (k - (p1 * alpha + p2)) % 128;
             }
 
             decryptionLine[i] = getAscii((alpha));
