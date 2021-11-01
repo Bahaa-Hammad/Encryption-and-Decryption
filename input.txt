@@ -1,11 +1,18 @@
-The Gambler's Fallacy
-If you flip a normal coin ten times, and you get ten heads, then
-on the 11th flip, are you more likely to get a tail? Or, by playing
-the lottery with the numbers 1 to 6, are you less likely to win than
-playing with more evenly spaced numbers?
-Don't be a victim of the gambler's fallacy. Past events never
-affect the outcome of an independent event. Never. Ever. In a
-truly random lottery drawing, the chances of any specific numbers
-being chosen is the same as any other. There's no “hidden law”
-that forces numbers that weren't frequently chosen in the past to
-be chosen more often in the future.
+To Sherlock Holmes she is always the woman. I have seldom heard him
+mention her under any other name. In his eyes she eclipses and
+predominates the whole of her sex. It was not that he felt any
+emotion akin to love for Irene Adler. All emotions, and that one
+particularly, were abhorrent to his cold, precise but admirably
+balanced mind. He was, I take it, the most perfect reasoning and
+observing machine that the world has seen, but as a lover he would
+have placed himself in a false position. He never spoke of the softer
+passions, save with a gibe and a sneer. They were admirable things
+for the observer excellent for drawing the veil from men's motives
+and actions. But for the trained reasoner to admit such intrusions
+into his own delicate and finely adjusted temperament was to
+introduce a distracting factor which might throw a doubt upon all his
+mental results. Grit in a sensitive instrument, or a crack in one of
+his own high-power lenses, would not be more disturbing than a strong
+emotion in a nature such as his. And yet there was but one woman to
+him, and that woman was the late Irene Adler, of dubious and
+questionable memory.
