@@ -1,13 +1,11 @@
 package CS285Project;
 
 import java.io.*;
-
 import java.util.Scanner;
 
 public class EncryptionAndDecryption {
 
     public static void main(String[] args) throws FileNotFoundException {
-
         //User Prime Number input:
         Scanner pInput = new Scanner(System.in);
         System.out.println("Enter The First Prime Number: ");
@@ -16,11 +14,6 @@ public class EncryptionAndDecryption {
         System.out.println("Enter The Second Prime Number: ");
         int p2 = pInput.nextInt();
 
-
-        String x = encrypt("'",p1, p2);
-        System.out.println((int) '\'');
-        System.out.println(x);
-        System.out.println(decrypt(x,p1,p2));
 
 
         File file = new File("input.txt");
@@ -31,7 +24,7 @@ public class EncryptionAndDecryption {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("encrypted.txt"));
             while (scan.hasNextLine()) { // Take one line at a time.
-                encryptedLine = encrypt(line.concat(""+ scan.nextLine()),p1,p2);
+                encryptedLine = encrypt(scan.nextLine(),p1,p2);
                 writer.write(encryptedLine);
                 writer.newLine();
             }
@@ -48,7 +41,7 @@ public class EncryptionAndDecryption {
             scan = new Scanner(file);
 
             while (scan.hasNextLine()) { // Take one line at a time.
-                encryptedLine = line.concat(""+ scan.nextLine()); // Encrypted
+                encryptedLine = scan.nextLine(); // Encrypted
                 writer.write(decrypt(encryptedLine, p1, p2));
                 writer.newLine();
             }
@@ -77,7 +70,6 @@ public class EncryptionAndDecryption {
         int alpha;
         int result;
 
-
         for (int i = 0; i < arr.length; i++) {
             int  k = getAsciiIndex(arr[i]);
             result = -1;
@@ -88,6 +80,7 @@ public class EncryptionAndDecryption {
             }
 
             decryptionLine[i] = getAscii((alpha));
+            System.out.println(alpha);
         }
         return concat(decryptionLine);
     }
