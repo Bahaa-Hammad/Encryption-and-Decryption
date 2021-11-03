@@ -27,10 +27,10 @@ public class EncryptionAndDecryption {
             // Reading
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
-                input= input.concat(line) + "\r"; // "\r" -> Marks a new line in the string.
+                input= input.concat(line) + "\n"; // "\n" -> Marks a new line in the string.
             }
             scan.close();
-            input = input.substring(0, input.length() - 1);
+            input = input.substring(0, input.length() - 1); // To fix the over writing on the line
             writer.write(encrypt(input, p1, p2));
             writer.close();
         } catch (IOException e) {
@@ -68,7 +68,7 @@ public class EncryptionAndDecryption {
         for (int i = 0; i < line.length(); i++) {
             int index = getAsciiIndex(line.charAt(i));
             int encryptionIndex = ((p1) * (index) + (p2)) % 128;
-            encrypted = encrypted.concat(append(getAscii((encryptionIndex))));
+            encrypted = encrypted.concat(append(getAscii((encryptionIndex)))); // append -> converts char to string
         }
         return encrypted;
     }
