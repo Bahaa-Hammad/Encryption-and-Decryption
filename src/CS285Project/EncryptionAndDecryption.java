@@ -27,7 +27,7 @@ public class EncryptionAndDecryption {
             // Reading
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
-                input= input.concat(line) + "\n"; // "\n" -> Marks a new line in the string.
+                input= input.concat(line) + "\r"; // "\r" -> Marks a new line in the string.
             }
             scan.close();
             input = input.substring(0, input.length() - 1); // To fix the over writing on the line
@@ -49,7 +49,7 @@ public class EncryptionAndDecryption {
             String out = "";
             while (scan.hasNextLine()) { // Take one line at a time.
                 String line = scan.nextLine();
-                out = out.concat(line) + "\r";
+                out = out.concat(line) + "\n";
             }
             scan.close();
             out = out.substring(0, out.length()-1);
